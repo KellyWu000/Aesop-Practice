@@ -241,7 +241,7 @@ form .fas,
 .pro-img img {
   width: 100%;
   object-fit: cover;
-  /* margin: -100px -10px; */
+  margin: -100px 0px;
   cursor: pointer;
 }
 .pro-img .pro-img-txt {
