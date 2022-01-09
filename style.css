@@ -21,6 +21,10 @@ a:hover {
   margin-top: 50px;
 }
 
+.row {
+  padding-right: 15px;
+  padding-left: 15px;
+}
 /* myCarousel  */
 #myCarousel {
   height: 100vh;
