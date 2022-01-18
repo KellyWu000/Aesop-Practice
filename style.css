@@ -144,6 +144,40 @@ form .fas,
   left: -5%;
 }
 
+#menu-wrapper {
+  position: relative;
+  cursor: pointer;
+  z-index: 10001;
+}
+
+.menu {
+  /* position: absolute; */
+  position: fixed;
+  z-index: 1001;
+  right: 15px;
+  bottom: 15px;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  background-color: rgb(199, 173, 124);
+  border-radius: 50%;
+}
+
+.ball {
+  position: fixed;
+
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  background-color: #a86a54e3;
+  border-radius: 50%;
+  transition: 1s;
+}
+.fas.fa-question {
+  font-size: 19px;
+}
 /* gift */
 .gift-img {
   width: 100%;
@@ -201,6 +235,7 @@ form .fas,
 .banner-wrapper {
   position: relative;
   margin-top: 300px;
+  z-index: -2;
 }
 
 .banner2::after {
@@ -212,14 +247,12 @@ form .fas,
   bottom: 20px;
   right: 20px;
   background-color: rgba(236, 228, 228, 0.486);
-  z-index: 1;
 }
 .banner2 h1 {
   position: absolute;
   top: 55px;
   left: 30px;
   writing-mode: vertical-lr;
-  z-index: 2;
   font-family: "Cormorant Garamond", serif;
   letter-spacing: 3px;
 }
@@ -283,7 +316,8 @@ form .fas,
 
 .showStyle {
   width: 100%;
-  height: 80px;
+  height: 100px;
+
   background-color: #b9a394;
   transition: 1.5s;
   box-shadow: 4px 4px 1px #888;

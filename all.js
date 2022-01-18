@@ -65,6 +65,81 @@ console.log(e.target.classList.contains('pro-img-txt'))
   
     
 }
+const data=[];
+let menu=document.querySelector('.menu')
+let menuwrapper =document.querySelector('#menu-wrapper')
+menuwrapper.addEventListener('click',toggleMenu)
+let  menuOpened=false;
+function toggleMenu (e){
+    menuOpened=!menuOpened;
+    if(menuOpened){
+        for(let i=0;i<data.length;i++){
+          setTimeout(()=>{
+         let c=data[i].target;
+        //  c.style.left= data[i].p2.x +"px";
+         c.style.bottom= data[i].p2.y + "px";
+          },100 * i)  
+        }
+    }else{
+        for(let i=0;i<data.length;i++){
+            setTimeout(()=>{
+                let c=data[i].target;
+                console.log(c);
+                c.style.right=data[i].p1.x + "px";
+                c.style.bottom=data[i].p1.y + "px";
+                 },100 * i)  
+               }
+        }
+    }
+
+let menuList=[{
+   name:"聯絡我們",
+   iconName: 'far fa-envelope'
+},
+{
+    name:"常見問題",
+    iconName: 'far fa-question-circle'
+},
+{
+    name:"行銷活動",
+    iconName: 'fas fa-gift'
+},
+]
+
+for (let i=0 ; i<menuList.length ;i++){
+ 
+    let b = document.createElement("div");
+    b.className = "ball";
+    b.title = menuList[i].name;
+
+    const icon = document.createElement("i");
+
+    icon.className = menuList[i].iconName;
+//    b.setAttribute('i',menuList[i].iconName)
+    // <i class="fas fa-question"></i>
+    // b.innerHTML = menuList[i].name;
+    b.id = "b" + (i + 1);
+
+//   const obj = { target: b, p1: { x: 15, y: 577-63 } };
+        // b.style.top = obj.p1.y + "px";
+        // b.style.left = obj.p1.x + "px";
+        const obj = { target: b, p1: { x: 19, y: 15 } };
+        b.style.bottom = obj.p1.y + "px";
+        b.style.right = obj.p1.x + "px";
+     
+
+        obj.p2 = {
+        //   x: 1263-63 * (i *2),
+          y: (577-63) *((i+1) *0.16),
+        };
+
+        data.push(obj);
+
+        b.appendChild(icon);
+
+ menuwrapper.appendChild(b); //元素加入至指定的位置之後才會顯示
+}
+
 
 
 
