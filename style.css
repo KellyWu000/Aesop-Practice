@@ -125,13 +125,13 @@ form .fas,
   position: relative;
 }
 
-.searchbar {
+/* .searchbar {
   position: absolute;
   left: 0;
   border-bottom: 2px solid black;
   width: 125px;
   transition: 0.5s;
-}
+} */
 /* .searchbar:after {
   content: " ";
   height: 2px;

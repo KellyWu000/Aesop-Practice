@@ -162,12 +162,12 @@ close.addEventListener('click',function(){
 })
 
 
-let searchbar =document.querySelector('.search-wrapper');
-searchbar.addEventListener('click',function(e){
-    e.target.nextElementSibling.classList.toggle('hide')
-    if(e.target.classList.contains('fa fa-search ')){
+// let searchbar =document.querySelector('.search-wrapper');
+// searchbar.addEventListener('click',function(e){
+//     e.target.nextElementSibling.classList.toggle('hide')
+//     if(e.target.classList.contains('fa fa-search ')){
         
-e.target.classList.toggle('searchbar')
-    }
+// e.target.classList.toggle('searchbar')
+//     }
 
-})
+// })
