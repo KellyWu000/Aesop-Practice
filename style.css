@@ -121,7 +121,28 @@ form .fas,
   color: rgba(0, 0, 0, 0.363);
   padding-right: 6px;
 }
+.search-wrapper {
+  position: relative;
+}
 
+.searchbar {
+  position: absolute;
+  left: 0;
+  border-bottom: 2px solid black;
+  width: 125px;
+  transition: 0.5s;
+}
+/* .searchbar:after {
+  content: " ";
+  height: 2px;
+  width: 100%;
+  margin: 15px 0;
+  transition: width 0.7s 0.2s;
+  background-color: black;
+} */
+/* .searchBar:after {
+  width: 100%;
+} */
 .product-img {
   width: 100%;
   height: 300px;
@@ -310,6 +331,11 @@ form .fas,
   width: 100%;
 } */
 
+#menu-wrapper .fas.fa-chevron-up {
+  position: fixed;
+  bottom: 0px;
+  right: 3px;
+}
 .hide {
   display: none;
 }
@@ -326,6 +352,29 @@ form .fas,
   font-weight: 700;
 }
 
+.popdiv {
+  width: 75%;
+  height: 500px;
+  margin: 0 auto;
+  background-color: rgb(95, 93, 93);
+  position: fixed;
+  top: 80px;
+  left: 0;
+  right: 0;
+}
+.popdiv img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.fas.fa-times {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  font-size: 20px;
+  color: rgb(228, 220, 220);
+}
 .pro-detail {
   background-color: #d8c6ae;
   /* justify-content: end; */

@@ -1,7 +1,9 @@
 
 let proImgTxt=document.querySelector('.pro-img');
-let proNext =document.querySelector('.pro-img-txt').nextElementSibling;
+let proNext =document.querySelector('.pro-img-txt');
 let hide =document.querySelector('.hide');
+
+let popdiv=document.querySelector('.popdiv')
 
 proImgTxt.addEventListener("click",proIntroduce)
 // let open=false;
@@ -72,9 +74,11 @@ menuwrapper.addEventListener('click',toggleMenu)
 let  menuOpened=false;
 function toggleMenu (e){
     menuOpened=!menuOpened;
-    if(menuOpened){
+    if(e.target.classList.contains('menu')){
+       if(menuOpened){
         for(let i=0;i<data.length;i++){
           setTimeout(()=>{
+       
          let c=data[i].target;
         //  c.style.left= data[i].p2.x +"px";
          c.style.bottom= data[i].p2.y + "px";
@@ -89,17 +93,19 @@ function toggleMenu (e){
                 c.style.bottom=data[i].p1.y + "px";
                  },100 * i)  
                }
-        }
+        }  
+    }
+   
     }
 
 let menuList=[{
+    name:"常見問題",
+    iconName: 'far fa-question-circle'
+},{
    name:"聯絡我們",
    iconName: 'far fa-envelope'
 },
-{
-    name:"常見問題",
-    iconName: 'far fa-question-circle'
-},
+
 {
     name:"行銷活動",
     iconName: 'fas fa-gift'
@@ -123,7 +129,10 @@ for (let i=0 ; i<menuList.length ;i++){
 //   const obj = { target: b, p1: { x: 15, y: 577-63 } };
         // b.style.top = obj.p1.y + "px";
         // b.style.left = obj.p1.x + "px";
-        const obj = { target: b, p1: { x: 19, y: 15 } };
+        const obj = { 
+            target: b, 
+            p1: { x: 19, y: 15 }
+         };
         b.style.bottom = obj.p1.y + "px";
         b.style.right = obj.p1.x + "px";
      
@@ -134,12 +143,31 @@ for (let i=0 ; i<menuList.length ;i++){
         };
 
         data.push(obj);
-
+        console.log(data);
         b.appendChild(icon);
 
  menuwrapper.appendChild(b); //元素加入至指定的位置之後才會顯示
 }
 
+let gift =document.querySelector('#b3');
+gift.addEventListener('click',campaign)
+
+function campaign(){
+   popdiv.classList.toggle('hide')
+}
+
+let close =document.querySelector('.close');
+close.addEventListener('click',function(){
+     popdiv.classList.toggle('hide')
+})
 
 
+let searchbar =document.querySelector('.search-wrapper');
+searchbar.addEventListener('click',function(e){
+    e.target.nextElementSibling.classList.toggle('hide')
+    if(e.target.classList.contains('fa fa-search ')){
+        
+e.target.classList.toggle('searchbar')
+    }
 
+})
