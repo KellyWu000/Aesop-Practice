@@ -4,7 +4,10 @@ let proNext =document.querySelector('.pro-img-txt');
 let hide =document.querySelector('.hide');
 
 let popdiv=document.querySelector('.popdiv')
+let wrap=document.querySelector('.wrap')
 
+let signIn =document.querySelector('.sign-in');
+let signUp =document.querySelector('.sign-up');
 proImgTxt.addEventListener("click",proIntroduce)
 // let open=false;
 function proIntroduce (e)
@@ -84,6 +87,7 @@ function toggleMenu (e){
          c.style.bottom= data[i].p2.y + "px";
           },100 * i)  
         }
+       
     }else{
         for(let i=0;i<data.length;i++){
             setTimeout(()=>{
@@ -93,7 +97,9 @@ function toggleMenu (e){
                 c.style.bottom=data[i].p1.y + "px";
                  },100 * i)  
                }
+            
         }  
+       
     }
    
     }
@@ -107,8 +113,8 @@ let menuList=[{
 },
 
 {
-    name:"行銷活動",
-    iconName: 'fas fa-gift'
+    name:"會員專區",
+    iconName: 'fas fa-user'
 },
 ]
 
@@ -149,17 +155,48 @@ for (let i=0 ; i<menuList.length ;i++){
  menuwrapper.appendChild(b); //元素加入至指定的位置之後才會顯示
 }
 
-let gift =document.querySelector('#b3');
-gift.addEventListener('click',campaign)
 
-function campaign(){
-   popdiv.classList.toggle('hide')
+menu.addEventListener('click',campaign)
+// gift.addEventListener('click',campaign)
+
+let opened=false;
+function campaign(e){
+    //下條件
+ 
+    opened=!opened;
+    if(opened){
+        popdiv.classList.remove('hide')
+    }else{
+        popdiv.classList.add('hide')
+    }
+
 }
+let gift =document.querySelector('#b3');
 
-let close =document.querySelector('.close');
-close.addEventListener('click',function(){
-     popdiv.classList.toggle('hide')
+gift.addEventListener("click",function(e){
+   
+
+    signIn.classList.toggle('hide')
+    signUp.classList.toggle('hide')
+    
 })
+let close =document.querySelector('.close');
+let  memberclose =document.querySelector('.memberclose');
+
+close.addEventListener('click',function(){
+    menuOpened=false;
+     popdiv.classList.toggle('hide')
+
+})
+memberclose.addEventListener('click',function(){
+
+    signIn.classList.toggle('hide')
+    signUp.classList.toggle('hide')
+})
+
+
+
+
 
 
 // let searchbar =document.querySelector('.search-wrapper');
